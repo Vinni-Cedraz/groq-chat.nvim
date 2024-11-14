@@ -21,7 +21,7 @@ A Neovim plugin that integrates Groq's AI models directly into your editor for c
 
 Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 ```lua
-{
+return {
     'Vinni-Cedraz/groq-chat.nvim',
     dependencies = {
         'nvim-lua/plenary.nvim',
