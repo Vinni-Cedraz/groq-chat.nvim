@@ -1,3 +1,4 @@
+
 # groq-chat.nvim
 
 A Neovim plugin that integrates Groq's AI models directly into your editor for code assistance and chat interactions.
@@ -20,13 +21,17 @@ A Neovim plugin that integrates Groq's AI models directly into your editor for c
 
 Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 ```lua
-return {
+{
     'Vinni-Cedraz/groq-chat.nvim',
     dependencies = {
         'nvim-lua/plenary.nvim',
     },
     config = function()
-        require('groq-chat').setup()
+        require('groq-chat').setup({
+            api_key = "your-groq-api-key", -- Required
+            model = "gemma2-9b-it",        -- Optional, default: "gemma2-9b-it"
+            window_width = 80,             -- Optional, default: 80
+        })
     end
 }
 ```
@@ -37,21 +42,13 @@ use {
     'Vinni-Cedraz/groq-chat.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
-        require('groq-chat').setup()
+        require('groq-chat').setup({
+            api_key = "your-groq-api-key", -- Required
+            model = "gemma2-9b-it",        -- Optional, default: "gemma2-9b-it"
+            window_width = 80,             -- Optional, default: 80
+        })
     end
 }
-```
-
-## Configuration
-
-Add your Groq API key and customize settings:
-
-```lua
-require('groq-chat').setup({
-    api_key = "your-groq-api-key", -- Required
-    model = "gemma2-9b-it",        -- Optional, default: "gemma2-9b-it"
-    window_width = 80,             -- Optional, default: 80
-})
 ```
 
 ## Usage
@@ -75,3 +72,4 @@ MIT
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
